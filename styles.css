@@ -1,0 +1,57 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root{
+  --brand:#6ee7b7; --brand2:#7c3aed; --bg:#0b0c10; --panel:#111217; --text:#e6e6ea; --muted:#9aa4b2;
+}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(900px 600px at 10% -10%, rgba(124,58,237,.2), transparent 55%),
+              radial-gradient(800px 700px at 120% 10%, rgba(110,231,183,.15), transparent 40%), var(--bg);
+  color: var(--text);
+}
+header{
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,.25);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.logo{ font-weight: 800; padding: 14px 20px; font-size: 1.2rem; color: var(--text); }
+.logo span{ color: var(--brand); }
+.filters{ display: flex; gap: 10px; padding: 0 20px 14px 20px; flex-wrap: wrap; }
+.filter-btn{
+  background: #16181f; color: var(--text); border: 1px solid rgba(255,255,255,.12);
+  padding: 8px 12px; border-radius: 999px; cursor: pointer; transition: .2s ease;
+}
+.filter-btn:hover{ transform: translateY(-1px); border-color: var(--brand); }
+main{ width: min(1100px, 92vw); margin: 28px auto; text-align: center; }
+h1{ font-size: clamp(1.25rem, 3vw, 1.8rem); margin-bottom: 6px; }
+.sub{ color: var(--muted); }
+.gallery{
+  margin-top: 18px;
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(12, 1fr);
+}
+.video-card{
+  grid-column: span 12;
+  background: linear-gradient(180deg, #14161d, #0f1116);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px; overflow: hidden;
+  cursor: pointer; transition: .2s ease;
+}
+@media (min-width:600px){ .video-card{ grid-column: span 6 } }
+@media (min-width:920px){ .video-card{ grid-column: span 4 } }
+.video-card:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.video-card img{ width:100%; display:block; aspect-ratio:16/9; object-fit: cover; }
+.video-card h3{ padding: 10px 12px 12px; text-align: left; font-size: .95rem; }
+
+/* Modal */
+.modal{ position: fixed; inset:0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.7); padding: 24px; }
+.modal.hidden{ display: none; }
+.modal:not(.hidden){ display:flex; }
+.modal-content{ width: min(1100px, 96vw); background: #0b0c10; border:1px solid rgba(255,255,255,.12); border-radius: 16px; overflow: hidden; position: relative; }
+.close-btn{
+  position: absolute; top: 8px; right: 10px; font-size: 2rem; line-height: 1; background: transparent; color: white; border: none; cursor: pointer; z-index: 2;
+}
+.video-wrap{ position: relative; padding-top: 56.25%; background:#000; }
+.video-wrap iframe{ position: absolute; inset: 0; width: 100%; height: 100%; }
+
+footer{ text-align:center; color: var(--muted); margin: 26px 0 50px; }

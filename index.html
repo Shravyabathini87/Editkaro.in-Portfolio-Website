@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editkaro.in - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Editkaro<span>.in</span></div>
+    <nav class="filters">
+      <button class="filter-btn" data-category="all">All</button>
+      <button class="filter-btn" data-category="short">Short Videos</button>
+      <button class="filter-btn" data-category="long">Long Videos</button>
+      <button class="filter-btn" data-category="gaming">Gaming</button>
+      <button class="filter-btn" data-category="football">Football Edits</button>
+      <button class="filter-btn" data-category="ecom">eCommerce Ads</button>
+      <button class="filter-btn" data-category="doc">Documentary</button>
+      <button class="filter-btn" data-category="color">Color Grading</button>
+      <button class="filter-btn" data-category="anime">Anime</button>
+      <button class="filter-btn" data-category="ads">Ads</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Work</h1>
+    <p class="sub">Click a thumbnail to watch the YouTube video in a modal.</p>
+    <div class="gallery">
+      <!-- Cards (thumbnail image only; click opens YouTube in modal) -->
+      <div class="video-card" data-category="short" data-video="https://www.youtube.com/embed/5O0YDHiosD0">
+        <img src="assets/thumb_short.png" alt="Short-form Reel Thumbnail">
+        <h3>Short-form Reel</h3>
+      </div>
+
+      <div class="video-card" data-category="long" data-video="https://www.youtube.com/embed/tgbNymZ7vqY">
+        <img src="assets/thumb_long.png" alt="Long-form Vlog Thumbnail">
+        <h3>Long-form Vlog</h3>
+      </div>
+
+      <div class="video-card" data-category="gaming" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+        <img src="assets/thumb_gaming.png" alt="Gaming Montage Thumbnail">
+        <h3>Gaming Montage</h3>
+      </div>
+
+      <div class="video-card" data-category="football" data-video="https://www.youtube.com/embed/Uj1ykZWtPYI">
+        <img src="assets/thumb_football.png" alt="Football Edit Thumbnail">
+        <h3>Football Edit</h3>
+      </div>
+
+      <div class="video-card" data-category="ecom" data-video="https://www.youtube.com/embed/aqz-KE-bpKQ">
+        <img src="assets/thumb_ecom.png" alt="eCommerce Ad Thumbnail">
+        <h3>eCommerce Ad</h3>
+      </div>
+
+      <div class="video-card" data-category="doc" data-video="https://www.youtube.com/embed/ysz5S6PUM-U">
+        <img src="assets/thumb_doc.png" alt="Documentary Style Thumbnail">
+        <h3>Documentary Style</h3>
+      </div>
+
+      <div class="video-card" data-category="color" data-video="https://www.youtube.com/embed/VYOjWnS4cMY">
+        <img src="assets/thumb_color.png" alt="Color Grading Thumbnail">
+        <h3>Color Grading</h3>
+      </div>
+
+      <div class="video-card" data-category="anime" data-video="https://www.youtube.com/embed/2Vv-BfVoq4g">
+        <img src="assets/thumb_anime.png" alt="Anime Edit Thumbnail">
+        <h3>Anime Edit</h3>
+      </div>
+
+      <div class="video-card" data-category="ads" data-video="https://www.youtube.com/embed/9bZkp7q19f0">
+        <img src="assets/thumb_ads.png" alt="Ad Campaign Thumbnail">
+        <h3>Ad Campaign</h3>
+      </div>
+    </div>
+  </main>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Video player">
+      <button id="closeModal" class="close-btn" aria-label="Close">&times;</button>
+      <div class="video-wrap">
+        <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Editkaro.in — Portfolio
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
